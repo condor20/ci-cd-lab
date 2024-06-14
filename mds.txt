@@ -1,0 +1,198 @@
+CONFIG:
+show startup-config
+show running-config
+show running-config diff
+show run |include host|gateway|ntp|fcdomain|http|telnet|zoneset|vsan
+show start |include host|gateway|ntp|fcdomain|http|telnet|zoneset|vsan
+show install all status
+show switchname
+show wwn switch
+show switch summary
+show version
+show cdp neighbors
+show boot
+show system internal flash
+show snmp host
+show ntp peers
+show ssh server
+show telnet server
+
+
+Switch Serial Number:
+The switch serial number can be retrieved by using either of the two following commands:
+show license host-id
+show sprom backplane 1 | grep “Serial”
+
+LICENSING:
+show feature
+show license brief
+show license usage
+show port-license
+show port-license | grep -i acquire
+
+HARDWARE:
+show hardware
+show hardware internal errors all
+show environment
+show environment temperature
+show environment temperature module 1
+show environment power
+show inventory
+show inventory module
+show inventory chassis
+show inventory xbar
+show clock
+
+INTERFACES:
+show interface mgmt0
+show ip interface
+show ip interface mgmt 0
+show interface brief
+show interface fc1/1 brief
+show run interface fc1/1
+show interface description
+show interface description | grep VMAX
+show interface fc1/1 | include description
+show interface transceiver
+show interface transceiver details
+show interface fc1/1 transceiver
+show interface fc1/1 transceiver details
+show int | include CRC
+show int | include errors
+Show int fc1/1 | include errors
+Show int fc1/1-48 | include errors
+Show int fc1/1-32 | include errors
+Show int fc2/1-32 | include errors
+show interface fc1/1-32,fc2/1-32 | include errors
+show interface fc1/1-32,fc2/1-32,fc3/1-32,fc4/1-32 | include errors
+show interface fc1/15,fc2/15,fc3/21,fc4/22 | include errors
+show int fc1/1,fc1/12 |include fc|vsan|description|CRC|errors
+show port-channel summary
+show port-channel usage
+show port-channel database
+show port-channel consistency
+show interface port-channel X
+show run interface port-channel X
+show port internal info
+show port internal info interface fc1/1
+show port internal info interface port-channel X
+show port-resources module 1
+show port-resources module 2
+
+VSANs (Virtual SANs):
+show vsan
+show vsan membership
+show vsan membership usage
+show vsan X membership
+show vsan membership interface fc1/1
+show vsan membership interface fc1/1-32
+show vsan membership interface port-channel X
+show topology vsan X
+
+FLOGI (FABRIC LOGIN):
+*Displays devices connected locally over physical ports.
+show flogi database
+show flogi database details
+show flogi database interface fc1/1
+show flogi database interface port-channel X
+show flogi database vsan X
+show flogi database fcid 0x000xxx
+show flogi internal info flogi-table vsan X
+show flogi internal event-history debugs
+show flogi internal vsan X
+show flogi internal errors
+show flogi internal vsan-state X
+
+FCDOMAIN (Fibre Channel domain):
+*Displays global information about fcdomain configurations.
+show fcdomain
+show fcdomain vsan X
+show fcdomain domain-list
+show fcdomain domain-list vsan X
+show fcdomain address-allocation vsan X
+
+FCNS (Fibre Channel Name Server):
+*Displays wwn&fcid including devices connected over IVR/PC/ISL.
+show fcns database
+show fcns database detail vsan X
+show fcns database fcid 0x010440 detail vsan X
+
+show rscn statistics vsan X
+show fspf database vsan X
+
+FC & DEVICE ALIAS:
+show fcalias
+show fcalias vsan X
+show fcalias pending vsan X
+show device-alias database
+
+ZONING:
+show zone (Displays all VSANs)
+show zone status
+show zone status vsan X (Display zoning mode status enhanced/basic)
+show zone active
+show zone active vsan X
+show zone vsan X
+show zone statistics
+show zone statistics vsan X
+show zone active vsan X
+show zone active vsan X | grep ZoneHostName
+show zone analysis vsan X
+show zone analysis active vsan X
+show zone policy vsan X
+show zone pending-diff vsan X
+show zone member pwwn 21:00:00:XX:XX:XX:XX:XX
+show zone name ZoneX
+show zoneset
+show zoneset vsan X-Y
+show zoneset active (An asterix (*) next to the device indicates it is logged into the name server)
+show zoneset vsan X-Y
+show zoneset vsan X | section zoneName (includes pWWN detail)
+show zoneset active vsan X
+show zoneset active vsan X | include zoneName
+show zoneset active vsan X | begin zoneName
+show zoneset active vsan X | section zoneName
+show zoneset brief
+show zoneset brief vsan X
+show zone-attribute-group vsan X
+show zoneset pending active vsan X
+show zoneset pending vsan X
+
+IVR (Inter VSAN Routing):
+show ivr
+show ivr vsan-topology
+show ivr zone
+show ivr zone | grep HostZoneName
+show ivr zoneset status
+show ivr zoneset active
+show ivr internal fcns database
+
+CFS (Cisco Fabric Services):
+show cfs merge status
+show cfs peers
+show cfs status
+
+SUPPORT:
+show system uptime
+show tech-support brief
+show tech-support detail
+Show tech-support flogi
+Show tech-support fcdomain
+show tech-support vsan x
+show tech-support zone
+show tech-support zone vsan X
+show tech-support ivr
+show logging server
+Show logging log file
+show logging last lines
+Show ntp peer-status
+show system health
+show accounting log
+show processes cpu
+show processes cpu history
+show processes cpu module 1
+show processes cpu module 2
+show processes log
+show processes log details
+show processes memory
+show flash
